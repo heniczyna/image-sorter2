@@ -1,3 +1,13 @@
+* Tested with Python 3.7.9,
+* venv `venv379_image_sorter` (check possible venv with `workon` command - it comes from `virtualenvwrapper`)
+* `pip install -r requirements.txt`
+* changes in `image-sorter2_script.py`:
+  * `input_folder = 'images/'`
+  * `labels = ["human", "not_human"]` - it automatically creates corresponding folders in `input_folder`
+  * `copy_or_move = 'move'` - moves original images to corresponding folders, does not create a copy
+    * I have tested also `copy_or_move = 'copy'` however be careful with required `df_path = 'sort.txt'` (this file can not exist physically before running script, otherwise it causes errors, just specify the name and that is all)
+  * `file_extensions = ['.png', '.raw']` - script returns some warnings when reads `.raw` files however moving to corresponding folders still work (when `.png` and `.raw` files have the same same, the script reads in the way as follows: `1.raw`->`1.png`, `2.raw`->`2.png` (or `.png` file first, but does not matter), and you need to remember to hit class name twice to move both of them to corresponding folder (one for `.raw` and one for `.png`)
+
 # image-sorter2
 One-click image sorting/labelling script. Copies or moves images from a folder into subfolders.
 
