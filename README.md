@@ -1,3 +1,4 @@
+* https://datascience.stackexchange.com/a/46155
 * Tested with Python 3.7.9,
 * venv `venv379_image_sorter` (check possible venv with `workon` command - it comes from `virtualenvwrapper`)
 * `pip install -r requirements.txt`
